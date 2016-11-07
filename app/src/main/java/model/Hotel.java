@@ -1,18 +1,19 @@
 package model;
 
-import android.graphics.drawable.Drawable;
+import java.io.Serializable;
 
 /**
  * Created by Ahmad Dimas Abid M on 03-Nov-16.
  */
 
-public class Hotel {
-    public String judul, deskripsi;
-    public Drawable foto;
+public class Hotel implements Serializable {
+    public String judul, deskripsi, detail, lokasi, foto;
 
-    public Hotel(String judul, String deskripsi, Drawable foto) {
+    public Hotel(String judul, String deskripsi, String detail, String lokasi, String foto) {
         this.judul = judul;
         this.deskripsi = deskripsi;
+        this.detail = detail;
+        this.lokasi = lokasi;
         this.foto = foto;
     }
 }
