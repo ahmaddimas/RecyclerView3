@@ -44,6 +44,7 @@ public class InputActivity extends AppCompatActivity {
                 doSave();
             }
         });
+
     }
 
     private void doSave() {
