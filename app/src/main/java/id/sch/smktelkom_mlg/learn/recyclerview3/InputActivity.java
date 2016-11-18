@@ -45,6 +45,22 @@ public class InputActivity extends AppCompatActivity {
             }
         });
 
+        hotel = (Hotel) getIntent().getSerializableExtra(MainActivity.HOTEL);
+        if (hotel != null) {
+            setTitle("Edit " + hotel.judul);
+            filldata();
+        } else {
+            setTitle("New Hotel");
+        }
+    }
+
+    private void filldata() {
+        etJudul.setText(hotel.judul);
+        etDeskripsi.setText(hotel.deskripsi);
+        etDetail.setText(hotel.detail);
+        etLokasi.setText(hotel.lokasi);
+        uriFoto = Uri.parse(hotel.foto);
+        ivFoto.setImageURI(uriFoto);
     }
 
     private void doSave() {

@@ -54,6 +54,14 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
 
     public interface IHotelAdapter {
         void doClick(int pos);
+
+        void doEdit(int pos);
+
+        void doDelete(int pos);
+
+        void doFav(int pos);
+
+        void doShare(int pos);
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -78,7 +86,30 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
                     mIHotelAdapter.doClick(getAdapterPosition());
                 }
             });
-
+            bEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mIHotelAdapter.doEdit(getAdapterPosition());
+                }
+            });
+            bDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mIHotelAdapter.doDelete(getAdapterPosition());
+                }
+            });
+            ibFav.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mIHotelAdapter.doFav(getAdapterPosition());
+                }
+            });
+            ibShare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mIHotelAdapter.doShare(getAdapterPosition());
+                }
+            });
         }
     }
 }
